@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile - Form</title>
+    <link rel="stylesheet" href="./assets/css/style.css"/>
+</head>
+<body>
+
+    <header>
+
+        <h1>Edit Profile</h1>
+
+        <nav>
+            <ul>
+                <li class="selected">User info</li>
+                <li>Billing Information</li>
+            </ul>
+        </nav>
+        
+        <div class="profile-photo">
+            <span>John Doe</span>
+            <div class="box">
+                <img src="./assets/img/user-may-gauthier-unsplash.jpg" alt="Profile Photo"/>
+                <ion-icon name="trash-outline"></ion-icon>
+            </div>            
+            <button>Upload New Photo</button>
+            <small>Member since: <strong>29 September 2019</strong></small>
+        </div>
+
+    </header>
+
+    <main>
+
+        <form action="#" method="post">
+
+            <div class="box">
+                <label for="name">Full Name</label>
+                <input type="text" name="txtName" id="name" required>
+            </div>
+
+            <div class="box">
+                <label for="username">Username</label>
+                <input type="text" name="txtUsername" id="username" required>
+            </div>
+
+            <div class="box">
+                <label for="password">Password</label>
+                <input type="password" name="txtPassword" id="password" required>
+            </div>
+
+            <div class="box">
+                <label for="email">Email Address</label>
+                <input type="email" name="txtEmail" id="email" required>
+            </div>
+
+            <div class="box">
+                <label for="tel">Phone Number</label>
+                <input type="tel" name="txtTel" id="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                <small>Format: 123-456-7890</small>
+            </div>
+
+            <div class="box" id="sex-checkbox">
+
+                <span class="grid-span-2-columns">Sex</span>
+
+                <div class="grid-span-2-columns box">
+                    <input type="radio" name="txtSex" id="male" checked>
+                    <label for="male">Male</label>
+                </div>
+                
+                <div class=" grid-span-2-columns box">                    
+                    <input type="radio" name="txtSex" id="female">
+                    <label for="female">Female</label>
+                </div>
+
+            </div>
+
+            <div class="box grid-span-2-columns">
+                <label for="bio">Biography</label>
+                <textarea name="txtBio" id="bio" cols="30" rows="10"></textarea>                
+            </div>
+            
+            <div class="social-media grid-span-2-columns">
+
+                <span class="grid-span-2-columns">Social Profile</span>
+
+                <div class="box">
+                    <label for="facebook"><ion-icon name="logo-facebook"></ion-icon></label>
+                    <input type="url" name="txtFacebook" id="facebook" pattern="https://.*"> 
+                </div>
+
+                <div class="box">
+                    <label for="github"><ion-icon name="logo-github"></ion-icon></label>
+                    <input type="url" name="txtGithub" id="github" pattern="https://.*"> 
+                </div>
+
+                <div class="box">
+                    <label for="instagram"><ion-icon name="logo-instagram"></ion-icon></label>
+                    <input type="url" name="txtInstagram" id="instagram" pattern="https://.*"> 
+                </div>
+
+                <div class="box">
+                    <label for="linkedin"><ion-icon name="logo-linkedin"></ion-icon></label>
+                    <input type="url" name="txtLinkedin" id="linkedin" pattern="https://.*"> 
+                </div>                
+
+            </div>
+
+            <button type="submit">Update info</button>
+
+        </form>
+
+    </main>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

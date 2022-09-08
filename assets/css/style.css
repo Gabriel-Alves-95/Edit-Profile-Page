@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+:root {
+
+    --header-bg-color: #010304;
+    --header-color-strong: rgba(248, 250, 251, 1);
+    --header-color-weak: rgba(248, 250, 251, 0.7);
+    --header-btn-color: #ff3d18;
+
+    --form-color: #535b62;
+    --form-color-light: rgba(83, 91, 98, 0.7);
+    --form-border-color: #e7e9ef;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid-span-2-columns {
+    grid-column: 1 / span 2 !important;
+}
+
+body {    
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    color: var(--header-bg-color);  
+}
+
+header {
+    background-color: var(--header-bg-color);
+    color: var(--header-color-strong);    
+    padding: 0 30px;
+    display: grid;    
+    grid-template-columns: calc(100% - 205.36px) 205.36px;
+    position: relative;
+}
+
+header h1 {
+    font-weight: 900;
+    margin-top: 42px;    
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    bottom: 0;    
+}
+
+header ul li {
+    display: flex;
+    justify-content: stretch;
+}
+
+header ul li {
+    cursor: pointer;    
+    color: var(--header-color-weak);
+    text-decoration: none;
+    padding: 10px 12px 10px 7px;
+    border-bottom: 3px solid transparent;
+}
+
+
+.selected {
+    font-weight: 700;    
+    color: var(--header-color-strong);    
+    border-bottom: 3px solid var(--header-btn-color);
+}
+
+
+header .profile-photo {
+    margin: 1rem 0;
+    grid-column-start: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+header .profile-photo span {
+    font-weight: 700;
+}
+
+header .profile-photo .box {
+    position: relative;
+    margin: 8px 0;
+}
+
+header .profile-photo .box img {    
+    width: 120px;
+    box-shadow: 0 0 55px var(--header-color-strong);
+    border-radius: 50%;
+}
+
+header .profile-photo .box ion-icon {
+    color: var(--header-bg-color);
+    position: absolute;
+    top: 10px;
+    right: 0;
+    padding: 5px;
+    background-color: var(--header-color-strong);
+    border: 2px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: border .5s ease;
+}
+
+header .profile-photo .box ion-icon:hover {
+    border: 2px solid var(--header-btn-color);
+}
+
+header .profile-photo button {
+    margin-bottom: 8px;
+    padding: 10px 16px;
+    color: var(--header-color-strong);
+    background-color: var(--header-btn-color);
+    border-radius: 10px;
+    cursor: pointer;        
+}
+
+header .profile-photo button:hover {
+    box-shadow: 0 0 10px var(--header-color-strong);    
+    transition: box-shadow .5s ease;
+}
+
+main {
+    padding: 50px 2rem;    
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: grid;    
+    grid-template-columns: repeat(2, 45%);
+    gap: 36px;    
+    justify-content: center;
+    width: 100vw;
+    max-width: 732px;
+}
+
+form input:focus, 
+form textarea:focus {
+    outline-color: var(--header-btn-color) !important;
+}
+
+form > .box > input, 
+form > .box > textarea {
+    width: 100%;
+    margin-top: 10px;
+    color: #000;
+    font-weight: 700;
+}
+
+form > .box > label {
+    color: var(--form-color);
+    margin-bottom: 10px;
+}
+
+form .box  input, 
+form .box textarea {
+    padding: 13px 0 13px 10px;
+    font-weight: 700;
+    border: 2px solid var(--form-border-color);
+    border-radius: 5px;
+}
+
+form .box textarea {
+    padding: 13px;
+    resize: none;
+}
+
+form > .box > small {
+    color: var(--form-color-light);
+    font-size: 10px;
+}
+
+#sex-checkbox {    
+    display: grid;
+    grid-template-columns: 35px calc(100% - 35px);
+}
+
+#sex-checkbox > .box {
+    display: flex;
+    align-items: center;
+}
+
+#sex-checkbox > .box > input {
+    padding: 0;
+    width: 8px;
+    height: 8px;
+    border: 3px solid transparent;
+    appearance: none;
+    outline: 1px solid var(--header-btn-color);
+    outline-offset: 3px;
+    margin-right: 10px ;    
+}
+
+#sex-checkbox > .box > input:checked {
+    background-color: var(--header-btn-color);
+    border: 3px solid var(--header-btn-color);
+    box-shadow: 0 0 20px var(--header-btn-color);
+}
+
+form > .social-media {    
+    grid-row: 5;
+    display: grid;
+    --var-width: calc(50% - 63px)
+    grid-template-columns: repeat(2, var(--var-width));
+    gap: 36px;
+}
+
+form > .social-media > .box {
+    display: flex;
+    align-items: center;
+}
+
+form > .social-media > .box > label {
+    height: 24px;
+}
+
+form > .social-media > .box > label > ion-icon {    
+    font-size: 1.5rem;    
+    padding-right: 1rem;     
+}
+
+form > .social-media > .box > input {
+    width: 100%;
+    padding: 10px 0 10px 10px;
+}
+
+form > button {
+    grid-column: 1 / span 2;
+    grid-row: 6;
+    width: fit-content;
+    padding: 8px 38px 16px;
+    background-color: var(--header-btn-color);
+    color: var(--header-color-strong);
+    font-size: .75rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: padding .3s ease;
+}
+
+form > button:hover {
+    padding: 12px 38px 20px;
+}
+
+@media screen and (max-width: 550px) {
+
+    header {
+        height: 420px;
+    }
+
+    header h1 {
+        grid-column: 1 / span 2;
+    }
+
+        
+    header .profile-photo {        
+        grid-column: 1 / span 2;
+        grid-row: 2;          
+    }
+
+    header nav {
+        grid-column: 1 / span 2;
+        grid-row: 3;
+    }
+
+    form {
+        align-items: center;
+    }
+
+    form > .box,
+    .social-media > .box {
+        grid-column: 1 / span 2;        
+    }
+
+    form > button,
+    form > .social-media {
+        grid-row: auto;
+    }
+
+    #sex-checbox span {
+        margin-bottom: 10px;
+    }
+
+    #sex-checkbox > .box > label {
+        padding: 10px 0;
+    }
+
+} 
+
+@media screen and (max-width: 480px) {
+
+    main {
+        padding: 50px 1rem;
+    }
+
+}
+
+@media screen and (max-width: 350px) {
+
+    main {
+        padding: 50px .8rem;
+    }
+
+}
